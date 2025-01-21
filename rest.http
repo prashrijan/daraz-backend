@@ -4,7 +4,10 @@ POST {{endPoint}}/users/register
 Content-Type: application/json
 
 {
-
+    "userName" : "Ram",
+    "email" : "ram@ram.com",
+    "phoneNumber" : 1234,
+    "password" : "hello"
 }
 
 ###

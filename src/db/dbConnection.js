@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const dbConnection = async () => {
   try {
     const connection = await mongoose.connect(
-      `${process.env.MONGODB_URI}/${process.env.DB_NAME}`
+      `${process.env.MONGODB_URI}/daraz`
     );
 
     connection && console.log("Database is successfully connected.");
