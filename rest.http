@@ -4,9 +4,9 @@ POST {{endPoint}}/users/register
 Content-Type: application/json
 
 {
-    "userName" : "harti",
-    "email" : "hari@ram.com",
-    "phoneNumber" : 234,
+    "userName" : "prashijan",
+    "email" : "prashijan@ram.com",
+    "phoneNumber" : 48849,
     "password" : "password"
 }
 
@@ -22,6 +22,6 @@ POST {{endPoint}}/users/login
 Content-Type: application/json
 
 {
-"email": "hari@ram.com",
+"email": "prashijan@ram.com",
 "password": "password"
 }
