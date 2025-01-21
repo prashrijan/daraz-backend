@@ -1,13 +1,13 @@
-@endPoint = http://localhost:5000/api/v1
+@endPoint = http://localhost:3000/api/v1
 
 POST {{endPoint}}/users/register
 Content-Type: application/json
 
 {
-    "userName" : "Ram",
-    "email" : "ram@ram.com",
-    "phoneNumber" : 1234,
-    "password" : "hello"
+    "userName" : "harti",
+    "email" : "hari@ram.com",
+    "phoneNumber" : 234,
+    "password" : "password"
 }
 
 ###
