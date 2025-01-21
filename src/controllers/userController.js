@@ -1,5 +1,6 @@
 import { User } from "../model/userModel.js";
 
+// Registering User
 const registerUser = async (req, res) => {
   try {
     const { userName, email, phoneNumber, password } = req.body;
@@ -8,6 +9,17 @@ const registerUser = async (req, res) => {
       return res.status(400).json({
         status: "failed",
         message: "All fields are required.",
+      });
+    }
+
+    const existedUser = await User.findOne({
+      $or: [{ email }, { userName }, { phoneNumber }],
+    });
+
+    if (existedUser) {
+      return res.status(400).json({
+        status: "failed",
+        message: "User with this email or username already exists.",
       });
     }
 
@@ -28,6 +40,17 @@ const registerUser = async (req, res) => {
       status: "Failed",
       message: "Error registering the user.",
       error,
+    });
+  }
+};
+
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({
+      status: "failed",
+      message: "All fields are required.",
     });
   }
 };
