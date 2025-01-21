@@ -53,6 +53,38 @@ const loginUser = async (req, res) => {
       message: "All fields are required.",
     });
   }
+  const user = await User.findOne({ email })
+  if (!user) {
+    return res.status(400).json({
+      status: "failed",
+      message: "User not found!",
+    })
+  }
+
+  const isPasswordValid = await user.isPasswordCorrect(password)
+  if (!isPasswordValid) {
+    return res.status(400).json({
+      status: "failed",
+      message: "Invalid Password!!",
+    })
+  }
+
+  const accessToken = await user.generateAccessToken()
+  if (!accessToken) {
+    return res.status(400).json({
+      status: "failed",
+      message: "Unauthorised access!!!",
+    })
+  }
+
+
+  return res.status(201).json({
+    status: "success",
+    message: "Login Successful!!",
+    data: user,
+    accessToken,
+
+  })
 };
 
-export { registerUser };
+export { registerUser, loginUser };
