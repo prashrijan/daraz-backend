@@ -1,4 +1,5 @@
-@endPoint = http://localhost:3000/api/v1
+@PORT = 5000
+@endPoint = http://localhost:{{PORT}}/api/v1
 
 POST {{endPoint}}/users/register
 Content-Type: application/json
