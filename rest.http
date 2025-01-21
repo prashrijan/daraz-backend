@@ -1,0 +1,22 @@
+@endPoint = http://localhost:5000/api/v1
+
+POST {{endPoint}}/users/register
+Content-Type: application/json
+
+{
+
+}
+
+###
+
+GET {{endPoint}}/users
+
+
+###
+
+POST {{{endPoint}}}/users/login
+Content-Type: application/json
+
+{
+
+}
